@@ -51,6 +51,7 @@ handleCreateStudent = async (req, res) => {
         const newStudent = await createStudent(studentData);
         const token = generateToken(newStudent); // Generate token for the new student
         res.cookie('student', token, {
+            
             httpOnly: true,
             secure: true,
             sameSite: 'None'

@@ -3,7 +3,7 @@
 ## 🚀 Setup
 ```bash
 # Clone repo & enter directory
-cd python-api
+cd python_api
 
 # Install dependencies
 pip install -r requirements.txt

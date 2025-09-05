@@ -39,16 +39,16 @@ services:
       - ./api:/app
       - /app/node_modules
 
-  python-api:
-    build: ./python-api
+  python_api:
+    build: ./python_api
     env_file:
       - .env
     depends_on:
-      - nginx
+      - redis
     ports:
       - "8000:8000"
     volumes:
-      - ./python-api:/code/app/
+      - ./python_api:/code/app/
       - /code/app/venv
     
      
@@ -60,3 +60,4 @@ services:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
     depends_on:
       - api
+      - python_api 
